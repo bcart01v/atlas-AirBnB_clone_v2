@@ -12,9 +12,10 @@ Additionally, will also handle /hbnb routes.
 
 """
 
-from flask import Flask  # Corrected the import statement to Flask with a capital 'F'
+from flask import Flask # Removed Comment, it was too long for Pep8.
 
 app = Flask(__name__)
+
 
 @app.route('/', strict_slashes=False)
 def index():
@@ -26,6 +27,7 @@ def index():
     """
     return "Hello HBNB!"
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """
@@ -35,6 +37,7 @@ def hbnb():
         str: HBNB. Can you imagine?
     """
     return "HBNB"
+
 
 if __name__ == '__main__':
     # Runs the Flask application on 0.0.0.0, listening on port 5000.
