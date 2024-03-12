@@ -61,6 +61,7 @@ def c(text):
     return f"C {display_text}"
 
 
+@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route("/python/<text>",strict_slashes=False)
 def python(text):
     """
@@ -74,8 +75,6 @@ def python(text):
     """
 
     display_text=text.replace('_',' ')
-    if display_text == '':
-        display_text = 'is cool'
     return f"Python {display_text}"
 
 
