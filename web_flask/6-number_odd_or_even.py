@@ -24,7 +24,6 @@ Remember to smash that like button!
 
 from flask import Flask, render_template
 
-
 app = Flask(__name__)
 
 
@@ -110,8 +109,20 @@ def number_template(n):
         renter_template: Renders an HTML template with
         the passed number.
     """
-
     return render_template('5-number.html', n=n)
+
+
+@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+def number_odd_even(n):
+    """
+    Odd or Even
+
+    Args:
+        n (int): Integer from the URL
+    """
+
+    odd_or_even = 'even' if n % 2 == 0 else 'odd'
+    return render_template('6-number_odd_or_even.html', n=n, odd_or_even=odd_or_even)
 
 
 if __name__ == '__main__':
