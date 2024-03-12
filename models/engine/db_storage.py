@@ -71,3 +71,8 @@ class DBStorage:
         Session = scoped_session(sess_factory)
         self.__session = Session
 
+    def close(self):
+        """Close the session"""
+        if self.__session:
+            self.__session.close()
+
