@@ -22,7 +22,7 @@ Remember to smash that like button!
 """
 
 
-from flask import Flask # Removed Comment, it was too long for Pep8.
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -110,6 +110,7 @@ def number_template(n):
         renter_template: Renders an HTML template with
         the passed number.
     """
+    html = f"<html><body><h1>"
     return render_template('5-number.html', n=n)
 
 
