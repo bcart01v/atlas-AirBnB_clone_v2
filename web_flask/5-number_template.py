@@ -95,22 +95,20 @@ def number(n):
         str: Formatted string that shows N is a number
     """
 
-    return f"{n} is a number"
+    return "{n} is a number"
 
 
-@app.route('/number_template/<int>:n', strict_slashes=False)
+@app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
-    """Displays an HTML page with Number: N in an
-    H1 header tag.
+    """
+    Displays an HTML page with "Number: n" inside an H1 tag in the body,
+    only if n is an integer.
+    Or maybe not, I can't seem to get it to work, and I don't
+    know why.
 
     Args:
-        n (int): Integer from the URL
-
-    Returns:
-        renter_template: Renders an HTML template with
-        the passed number.
+    - n: integer variable from the URL path.
     """
-
     return render_template('5-number.html', n=n)
 
 

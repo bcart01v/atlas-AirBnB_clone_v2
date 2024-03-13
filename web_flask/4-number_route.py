@@ -95,7 +95,7 @@ def number(n):
         str: Formatted string that shows N is a number
     """
 
-    return f"{n} is a number"
+    return "{n} is a number"
 
 
 if __name__ == '__main__':
